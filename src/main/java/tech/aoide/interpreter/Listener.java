@@ -29,7 +29,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterClassMemberDeclaration(Java8Parser.ClassMemberDeclarationContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("C2", "sine", 3));
     }
 
     @Override
@@ -49,7 +50,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterAnnotationTypeElementDeclaration(Java8Parser.AnnotationTypeElementDeclarationContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("C2", "triangle", 3));
     }
 
     @Override
@@ -69,7 +71,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterPrimaryNoNewArray_lfno_primary_lf_arrayAccess_lfno_primary(Java8Parser.PrimaryNoNewArray_lfno_primary_lf_arrayAccess_lfno_primaryContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("D2", "sine", 3));
     }
 
     @Override
@@ -89,7 +92,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterConstantModifier(Java8Parser.ConstantModifierContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("D2", "triangle", 3));
     }
 
     @Override
@@ -109,7 +113,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterArgumentList(Java8Parser.ArgumentListContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("E2", "sine", 3));
     }
 
     @Override
@@ -129,7 +134,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterClassInstanceCreationExpression_lfno_primary(Java8Parser.ClassInstanceCreationExpression_lfno_primaryContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("E2", "triangle", 3));
     }
 
     @Override
@@ -149,7 +155,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterUnaryExpression(Java8Parser.UnaryExpressionContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("F2", "sine", 3));
     }
 
     @Override
@@ -169,7 +176,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterArrayType(Java8Parser.ArrayTypeContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("F2", "triangle", 3));
     }
 
     @Override
@@ -189,7 +197,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterExpressionName(Java8Parser.ExpressionNameContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("G2", "sine", 3));
     }
 
     @Override
@@ -209,7 +218,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterConstructorDeclarator(Java8Parser.ConstructorDeclaratorContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("G2", "triangle", 3));
     }
 
     @Override
@@ -229,7 +239,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterArrayCreationExpression(Java8Parser.ArrayCreationExpressionContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("A2", "sine", 3));
     }
 
     @Override
@@ -249,7 +260,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterVariableDeclaratorId(Java8Parser.VariableDeclaratorIdContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("A2", "triangle", 3));
     }
 
     @Override
@@ -269,7 +281,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterTypeArguments(Java8Parser.TypeArgumentsContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("B2", "sine", 3));
     }
 
     @Override
@@ -289,7 +302,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterExceptionTypeList(Java8Parser.ExceptionTypeListContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("B2", "triangle", 3));
     }
 
     @Override
@@ -309,7 +323,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterRelationalExpression(Java8Parser.RelationalExpressionContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("C3", "sine", 3));
     }
 
     @Override
@@ -329,7 +344,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterArrayAccess_lf_primary(Java8Parser.ArrayAccess_lf_primaryContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("C3", "triangle", 3));
     }
 
     @Override
@@ -350,7 +366,7 @@ public class Listener implements Java8Listener {
     @Override
     public void enterReturnStatement(Java8Parser.ReturnStatementContext ctx) {
         // TODO
-        addNode(0, new AudioNode("A4", "triangle", 3));
+        addNode(0, new AudioNode("D3", "sine", 3));
     }
 
     @Override
@@ -370,7 +386,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterTypeParameters(Java8Parser.TypeParametersContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("D3", "triangle", 3));
     }
 
     @Override
@@ -390,7 +407,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterLiteral(Java8Parser.LiteralContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("E3", "sine", 3));
     }
 
     @Override
@@ -410,7 +428,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterFieldAccess_lfno_primary(Java8Parser.FieldAccess_lfno_primaryContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("E3", "triangle", 3));
     }
 
     @Override
@@ -430,7 +449,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterFinally_(Java8Parser.Finally_Context ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("F3", "sine", 3));
     }
 
     @Override
@@ -450,7 +470,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterUnannInterfaceType_lfno_unannClassOrInterfaceType(Java8Parser.UnannInterfaceType_lfno_unannClassOrInterfaceTypeContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("F3", "triangle", 3));
     }
 
     @Override
@@ -470,7 +491,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterConstantDeclaration(Java8Parser.ConstantDeclarationContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("G3", "sine", 3));
     }
 
     @Override
@@ -490,7 +512,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterAnnotation(Java8Parser.AnnotationContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("G3", "triangle", 3));
     }
 
     @Override
@@ -510,7 +533,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterStaticImportOnDemandDeclaration(Java8Parser.StaticImportOnDemandDeclarationContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("A3", "sine", 3));
     }
 
     @Override
@@ -530,7 +554,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterThrowStatement(Java8Parser.ThrowStatementContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("A3", "triangle", 3));
     }
 
     @Override
@@ -550,7 +575,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterSingleStaticImportDeclaration(Java8Parser.SingleStaticImportDeclarationContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("B3", "sine", 3));
     }
 
     @Override
@@ -570,7 +596,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterConditionalAndExpression(Java8Parser.ConditionalAndExpressionContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("B3", "triangle", 3));
     }
 
     @Override
@@ -590,7 +617,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterPackageModifier(Java8Parser.PackageModifierContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("C4", "sine", 3));
     }
 
     @Override
@@ -610,7 +638,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterPrimaryNoNewArray_lfno_arrayAccess(Java8Parser.PrimaryNoNewArray_lfno_arrayAccessContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("C4", "triangle", 3));
     }
 
     @Override
@@ -630,7 +659,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterNormalInterfaceDeclaration(Java8Parser.NormalInterfaceDeclarationContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("D4", "sine", 3));
     }
 
     @Override
@@ -650,7 +680,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterConstructorModifier(Java8Parser.ConstructorModifierContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("D4", "triangle", 3));
     }
 
     @Override
@@ -670,7 +701,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterClassInstanceCreationExpression(Java8Parser.ClassInstanceCreationExpressionContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("E4", "sine", 3));
     }
 
     @Override
@@ -690,7 +722,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterAnnotationTypeMemberDeclaration(Java8Parser.AnnotationTypeMemberDeclarationContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("E4", "triangle", 3));
     }
 
     @Override
@@ -710,7 +743,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterVariableInitializerList(Java8Parser.VariableInitializerListContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("F4", "sine", 3));
     }
 
     @Override
@@ -730,7 +764,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterElementValue(Java8Parser.ElementValueContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("F4", "triangle", 3));
     }
 
     @Override
@@ -750,7 +785,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterArrayAccess(Java8Parser.ArrayAccessContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("G4", "sine", 3));
     }
 
     @Override
@@ -770,7 +806,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterUnannClassType(Java8Parser.UnannClassTypeContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("G4", "triangle", 3));
     }
 
     @Override
@@ -790,7 +827,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterAssignmentExpression(Java8Parser.AssignmentExpressionContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("A4", "sine", 3));
     }
 
     @Override
@@ -810,7 +848,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterNormalClassDeclaration(Java8Parser.NormalClassDeclarationContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("A4", "triangle", 3));
     }
 
     @Override
@@ -830,7 +869,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterEnhancedForStatementNoShortIf(Java8Parser.EnhancedForStatementNoShortIfContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("B4", "sine", 3));
     }
 
     @Override
@@ -850,7 +890,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterCompilationUnit(Java8Parser.CompilationUnitContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("B4", "triangle", 3));
     }
 
     @Override
@@ -870,7 +911,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterPrimaryNoNewArray_lf_arrayAccess(Java8Parser.PrimaryNoNewArray_lf_arrayAccessContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("C5", "sine", 3));
     }
 
     @Override
@@ -890,7 +932,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterSwitchBlockStatementGroup(Java8Parser.SwitchBlockStatementGroupContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("C5", "triangle", 3));
     }
 
     @Override
@@ -910,7 +953,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterTypeParameter(Java8Parser.TypeParameterContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("D5", "sine", 3));
     }
 
     @Override
@@ -930,7 +974,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterInterfaceBody(Java8Parser.InterfaceBodyContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("D5", "triangle", 3));
     }
 
     @Override
@@ -950,7 +995,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterDims(Java8Parser.DimsContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("E5", "sine", 3));
     }
 
     @Override
@@ -970,7 +1016,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterUnannPrimitiveType(Java8Parser.UnannPrimitiveTypeContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("E5", "triangle", 3));
     }
 
     @Override
@@ -990,7 +1037,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterEnumBody(Java8Parser.EnumBodyContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("G5", "sine", 3));
     }
 
     @Override
@@ -1010,7 +1058,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterPrimaryNoNewArray_lfno_primary(Java8Parser.PrimaryNoNewArray_lfno_primaryContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("G5", "triangle", 3));
     }
 
     @Override
@@ -1030,7 +1079,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterIfThenStatement(Java8Parser.IfThenStatementContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("A5", "sine", 3));
     }
 
     @Override
@@ -1050,7 +1100,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterInterfaceType(Java8Parser.InterfaceTypeContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("A5", "triangle", 3));
     }
 
     @Override
@@ -1070,7 +1121,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterAndExpression(Java8Parser.AndExpressionContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("B5", "sine", 3));
     }
 
     @Override
@@ -1090,7 +1142,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterUnannClassType_lfno_unannClassOrInterfaceType(Java8Parser.UnannClassType_lfno_unannClassOrInterfaceTypeContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("B5", "triangle", 3));
     }
 
     @Override
@@ -1110,7 +1163,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterFieldModifier(Java8Parser.FieldModifierContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("C6", "sine", 3));
     }
 
     @Override
@@ -1130,7 +1184,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterResourceList(Java8Parser.ResourceListContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("C6", "triangle", 3));
     }
 
     @Override
@@ -1150,7 +1205,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterStaticInitializer(Java8Parser.StaticInitializerContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("D6", "sine", 3));
     }
 
     @Override
@@ -1170,7 +1226,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterFieldDeclaration(Java8Parser.FieldDeclarationContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("D6", "triangle", 3));
     }
 
     @Override
@@ -1190,7 +1247,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterBasicForStatement(Java8Parser.BasicForStatementContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("E6", "sine", 3));
     }
 
     @Override
@@ -1210,7 +1268,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterPackageDeclaration(Java8Parser.PackageDeclarationContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("E6", "triangle", 3));
     }
 
     @Override
@@ -1230,7 +1289,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterSuperinterfaces(Java8Parser.SuperinterfacesContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("F6", "sine", 3));
     }
 
     @Override
@@ -1250,7 +1310,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterClassInstanceCreationExpression_lf_primary(Java8Parser.ClassInstanceCreationExpression_lf_primaryContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("F6", "triangle", 3));
     }
 
     @Override
@@ -1270,7 +1331,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterForInit(Java8Parser.ForInitContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("G6", "sine", 3));
     }
 
     @Override
@@ -1290,7 +1352,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterFormalParameters(Java8Parser.FormalParametersContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("G6", "triangle", 3));
     }
 
     @Override
@@ -1310,7 +1373,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterPrimaryNoNewArray_lfno_primary_lfno_arrayAccess_lfno_primary(Java8Parser.PrimaryNoNewArray_lfno_primary_lfno_arrayAccess_lfno_primaryContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("A6", "sine", 3));
     }
 
     @Override
@@ -1330,7 +1394,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterType(Java8Parser.TypeContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("A6", "triangle", 3));
     }
 
     @Override
@@ -1350,7 +1415,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterSynchronizedStatement(Java8Parser.SynchronizedStatementContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("B6", "sine", 3));
     }
 
     @Override
@@ -1370,7 +1436,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterSuperclass(Java8Parser.SuperclassContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("B6", "triangle", 3));
     }
 
     @Override
@@ -1391,7 +1458,7 @@ public class Listener implements Java8Listener {
     @Override
     public void enterExpressionStatement(Java8Parser.ExpressionStatementContext ctx) {
         // TODO
-        addNode(0, new AudioNode("B4", "triangle", 3));
+        addNode(0, new AudioNode("C7", "sine", 3));
     }
 
     @Override
@@ -1411,7 +1478,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterEnumBodyDeclarations(Java8Parser.EnumBodyDeclarationsContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("C7", "triangle", 3));
     }
 
     @Override
@@ -1431,7 +1499,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterForUpdate(Java8Parser.ForUpdateContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("D7", "sine", 3));
     }
 
     @Override
@@ -1451,7 +1520,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterPrimaryNoNewArray_lf_primary(Java8Parser.PrimaryNoNewArray_lf_primaryContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("D7", "triangle", 3));
     }
 
     @Override
@@ -1471,7 +1541,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterShiftExpression(Java8Parser.ShiftExpressionContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("E7", "sine", 3));
     }
 
     @Override
@@ -1491,7 +1562,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterInstanceInitializer(Java8Parser.InstanceInitializerContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("E7", "triangle", 3));
     }
 
     @Override
@@ -1511,7 +1583,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterIntegralType(Java8Parser.IntegralTypeContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("F7", "sine", 3));
     }
 
     @Override
@@ -1531,7 +1604,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterClassOrInterfaceType(Java8Parser.ClassOrInterfaceTypeContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("F7", "triangle", 3));
     }
 
     @Override
@@ -1551,7 +1625,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterNormalAnnotation(Java8Parser.NormalAnnotationContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("G7", "sine", 3));
     }
 
     @Override
@@ -1571,7 +1646,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterPrimary(Java8Parser.PrimaryContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("G7", "triangle", 3));
     }
 
     @Override
@@ -1591,7 +1667,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterFieldAccess(Java8Parser.FieldAccessContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("A7", "sine", 3));
     }
 
     @Override
@@ -1611,7 +1688,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterConstructorBody(Java8Parser.ConstructorBodyContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("A7", "triangle", 3));
     }
 
     @Override
@@ -1631,7 +1709,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterPrimaryNoNewArray_lf_primary_lf_arrayAccess_lf_primary(Java8Parser.PrimaryNoNewArray_lf_primary_lf_arrayAccess_lf_primaryContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("B7", "sine", 3));
     }
 
     @Override
@@ -1651,7 +1730,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterSwitchLabels(Java8Parser.SwitchLabelsContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("B7", "triangle", 3));
     }
 
     @Override
@@ -1671,7 +1751,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterInterfaceType_lf_classOrInterfaceType(Java8Parser.InterfaceType_lf_classOrInterfaceTypeContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("C2", "sine", 3));
     }
 
     @Override
@@ -1691,7 +1772,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterSingleElementAnnotation(Java8Parser.SingleElementAnnotationContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("C2", "triangle", 3));
     }
 
     @Override
@@ -1711,7 +1793,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterConstantExpression(Java8Parser.ConstantExpressionContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("D2", "sine", 3));
     }
 
     @Override
@@ -1731,7 +1814,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterTypeArgumentList(Java8Parser.TypeArgumentListContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("D2", "triangle", 3));
     }
 
     @Override
@@ -1751,7 +1835,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterReceiverParameter(Java8Parser.ReceiverParameterContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("E2", "sine", 3));
     }
 
     @Override
@@ -1771,7 +1856,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterEnumConstantList(Java8Parser.EnumConstantListContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("E2", "triangle", 3));
     }
 
     @Override
@@ -1791,7 +1877,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterCatchType(Java8Parser.CatchTypeContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("F2", "sine", 3));
     }
 
     @Override
@@ -1811,7 +1898,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterIfThenElseStatement(Java8Parser.IfThenElseStatementContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("F2", "triangle", 3));
     }
 
     @Override
@@ -1831,7 +1919,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterLabeledStatementNoShortIf(Java8Parser.LabeledStatementNoShortIfContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("G2", "sine", 3));
     }
 
     @Override
@@ -1851,7 +1940,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterMethodReference_lfno_primary(Java8Parser.MethodReference_lfno_primaryContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("G2", "triangle", 3));
     }
 
     @Override
@@ -1871,7 +1961,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterVariableModifier(Java8Parser.VariableModifierContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("A2", "sine", 3));
     }
 
     @Override
@@ -1891,7 +1982,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterConditionalOrExpression(Java8Parser.ConditionalOrExpressionContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("A2", "triangle", 3));
     }
 
     @Override
@@ -1911,7 +2003,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterElementValuePair(Java8Parser.ElementValuePairContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("B2", "sine", 3));
     }
 
     @Override
@@ -1931,7 +2024,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterDimExpr(Java8Parser.DimExprContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("B2", "triangle", 3));
     }
 
     @Override
@@ -1951,7 +2045,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterResource(Java8Parser.ResourceContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("C3", "sine", 3));
     }
 
     @Override
@@ -1971,7 +2066,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterInterfaceMethodModifier(Java8Parser.InterfaceMethodModifierContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("C3", "triangle", 3));
     }
 
     @Override
@@ -1991,7 +2087,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterInterfaceTypeList(Java8Parser.InterfaceTypeListContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("D3", "sine", 3));
     }
 
     @Override
@@ -2011,7 +2108,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterUnannInterfaceType(Java8Parser.UnannInterfaceTypeContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("D3", "triangle", 3));
     }
 
     @Override
@@ -2031,7 +2129,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterExclusiveOrExpression(Java8Parser.ExclusiveOrExpressionContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("E3", "sine", 3));
     }
 
     @Override
@@ -2051,7 +2150,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterPostIncrementExpression(Java8Parser.PostIncrementExpressionContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("E3", "triangle", 3));
     }
 
     @Override
@@ -2071,7 +2171,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterElementValueList(Java8Parser.ElementValueListContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("F3", "sine", 3));
     }
 
     @Override
@@ -2091,7 +2192,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterTypeDeclaration(Java8Parser.TypeDeclarationContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("F3", "triangle", 3));
     }
 
     @Override
@@ -2111,7 +2213,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterWildcard(Java8Parser.WildcardContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("G3", "sine", 3));
     }
 
     @Override
@@ -2131,7 +2234,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterUnaryExpressionNotPlusMinus(Java8Parser.UnaryExpressionNotPlusMinusContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("G3", "triangle", 3));
     }
 
     @Override
@@ -2151,7 +2255,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterMethodHeader(Java8Parser.MethodHeaderContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("A3", "sine", 3));
     }
 
     @Override
@@ -2171,7 +2276,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterEnumConstant(Java8Parser.EnumConstantContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("A3", "triangle", 3));
     }
 
     @Override
@@ -2191,7 +2297,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterPackageName(Java8Parser.PackageNameContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("B3", "sine", 3));
     }
 
     @Override
@@ -2211,7 +2318,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterPrimitiveType(Java8Parser.PrimitiveTypeContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("B3", "triangle", 3));
     }
 
     @Override
@@ -2231,7 +2339,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterLocalVariableDeclarationStatement(Java8Parser.LocalVariableDeclarationStatementContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("C4", "sine", 3));
     }
 
     @Override
@@ -2251,7 +2360,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterClassType_lf_classOrInterfaceType(Java8Parser.ClassType_lf_classOrInterfaceTypeContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("C4", "triangle", 3));
     }
 
     @Override
@@ -2271,7 +2381,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterAssignment(Java8Parser.AssignmentContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("D4", "sine", 3));
     }
 
     @Override
@@ -2291,7 +2402,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterStatementExpression(Java8Parser.StatementExpressionContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("D4", "triangle", 3));
     }
 
     @Override
@@ -2311,7 +2423,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterAmbiguousName(Java8Parser.AmbiguousNameContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("E4", "sine", 3));
     }
 
     @Override
@@ -2331,7 +2444,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterInterfaceMethodDeclaration(Java8Parser.InterfaceMethodDeclarationContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("E4", "triangle", 3));
     }
 
     @Override
@@ -2351,7 +2465,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterSwitchLabel(Java8Parser.SwitchLabelContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("F4", "sine", 3));
     }
 
     @Override
@@ -2371,7 +2486,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterPrimaryNoNewArray(Java8Parser.PrimaryNoNewArrayContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("F4", "triangle", 3));
     }
 
     @Override
@@ -2391,7 +2507,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterContinueStatement(Java8Parser.ContinueStatementContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("G4", "sine", 3));
     }
 
     @Override
