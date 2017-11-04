@@ -3,17 +3,13 @@ package tech.aoide.audio;
 public class AudioNode {
 
     private String key;
+    private String wave;
     private double duration;
-    private double speed;
-    private double volume;
-    private double offset;
 
-    public AudioNode(String key, double duration, double speed, double volume, double offset) {
+    public AudioNode(String key, String wave, double duration) {
         this.key = key;
+        this.wave = wave;
         this.duration = duration;
-        this.speed = speed;
-        this.volume = volume;
-        this.offset = offset;
     }
 
     public String getKey() {
@@ -24,40 +20,19 @@ public class AudioNode {
         this.key = key;
     }
 
-    public double getDuration() {
-        return this.duration;
+    public String getWave() {
+        return this.wave;
     }
 
-    public void setDuration(double duration) {
-        this.duration = duration;
-    }
+    public void setWave(String wave) { this.wave = wave; }
 
-    public double getSpeed() {
-        return this.speed;
-    }
+    public double getDuration() { return this.duration; }
 
-    public void setSpeed(double speed) {
-        this.speed = speed;
-    }
+    public void setDuration(double duration) { this.duration = duration; }
 
-    public double getVolume() {
-        return this.volume;
-    }
-
-    public void setVolume(double volume) {
-        this.volume = volume;
-    }
-
-    public double getOffset() {
-        return this.offset;
-    }
-
-    public void setOffset(double offset) {
-        this.offset = offset;
-    }
 
     @Override
     public String toString() {
-        return "k:" + key + " d:" + duration + " s:" + speed + " v:" + volume + " o:" + offset;
+        return "k:" + this.key + "w:" + this.wave + " d:" + this.duration + " s:";
     }
 }
