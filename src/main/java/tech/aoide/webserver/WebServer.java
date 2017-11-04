@@ -10,18 +10,16 @@ public class WebServer {
     }
 
     public static void setupRoutes() {
-        Spark.get("/", (req, res) -> "Aoide API server");
+        Spark.get("/", (req, res) -> "&#x1F311; Aoide API server");
         Spark.post("/process", ProcessAPI.processString);
     }
 
     public static void enableCORS(final String origin, final String methods, final String headers) {
         Spark.options("/*", (request, response) -> {
-
             String accessControlRequestHeaders = request.headers("Access-Control-Request-Headers");
             if (accessControlRequestHeaders != null) {
                 response.header("Access-Control-Allow-Headers", accessControlRequestHeaders);
             }
-
             String accessControlRequestMethod = request.headers("Access-Control-Request-Method");
             if (accessControlRequestMethod != null) {
                 response.header("Access-Control-Allow-Methods", accessControlRequestMethod);
