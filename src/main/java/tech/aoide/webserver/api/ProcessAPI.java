@@ -1,6 +1,7 @@
 package tech.aoide.webserver.api;
 
 import com.google.gson.Gson;
+import org.slf4j.LoggerFactory;
 import spark.Route;
 import tech.aoide.audio.AudioTrack;
 
@@ -10,8 +11,8 @@ public class ProcessAPI {
 
     public static Route processString = (req, res) -> {
         // send data to parser
-        String data = req.params("data");
-        System.out.println(data);
+        ProcessRequest processRequest = new Gson().fromJson(req.body(), ProcessRequest.class);
+        LoggerFactory.getLogger(ProcessAPI.class).info("\n" + processRequest.getData());
         // return data from audio engine
         res.header("Content-Encoding", "gzip");
         res.type("application/json");
