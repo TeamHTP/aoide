@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import org.slf4j.LoggerFactory;
 import spark.Route;
 import tech.aoide.audio.AudioTrack;
+import tech.aoide.interpreter.Interpreter;
 
 import java.util.ArrayList;
 
@@ -16,7 +17,8 @@ public class ProcessAPI {
         // return data from audio engine
         res.header("Content-Encoding", "gzip");
         res.type("application/json");
-        ArrayList<AudioTrack> tracks = new ArrayList<>();
+        Interpreter interpreter = new Interpreter(processRequest.getData());
+        ArrayList<AudioTrack> tracks = interpreter.interpret();
         return new Gson().toJson(tracks);
     };
 
