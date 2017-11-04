@@ -10,7 +10,8 @@ public class ProcessAPI {
 
     public static Route processString = (req, res) -> {
         // send data to parser
-        req.params("data");
+        String data = req.params("data");
+        System.out.println(data);
         // return data from audio engine
         res.header("Content-Encoding", "gzip");
         res.type("application/json");

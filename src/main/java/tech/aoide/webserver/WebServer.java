@@ -10,7 +10,10 @@ public class WebServer {
     }
 
     public static void setupRoutes() {
-        Spark.get("/", (req, res) -> "\uD83C\uDF11 Aoide API server");
+        Spark.get("/", (req, res) -> {
+            res.header("Content-Type", "text/html; charset=utf-8");
+            return "\uD83C\uDF11 Aoide API server";
+        });
         Spark.post("/process", ProcessAPI.processString);
     }
 
