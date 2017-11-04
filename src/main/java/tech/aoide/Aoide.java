@@ -8,7 +8,10 @@ public class Aoide {
         if (System.getenv("PORT") != null) {
             WebServer.port(Integer.parseInt(System.getenv("PORT")));
         }
-        WebServer.enableCORS("https://aoide-frontend.herokuapp.com, https://aoid-frontend-dev.herokuapp.com, https://aoide.tech", "POST, GET, OPTIONS", "*");
+        WebServer.allowOrigin("https://aoide-frontend.herokuapp.com");
+        WebServer.allowOrigin("https://aoide-frontend-dev.herokuapp.com");
+        WebServer.allowOrigin("https://aoide.tech");
+        WebServer.enableCORS("POST, GET, OPTIONS", "*");
         WebServer.setupRoutes();
     }
 

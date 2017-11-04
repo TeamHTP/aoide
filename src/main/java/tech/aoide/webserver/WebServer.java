@@ -3,7 +3,11 @@ package tech.aoide.webserver;
 import spark.Spark;
 import tech.aoide.webserver.api.ProcessAPI;
 
+import java.util.ArrayList;
+
 public class WebServer {
+
+    private static ArrayList<String> allowedOrigins = new ArrayList<>();
 
     public static void port(int port) {
         Spark.port(port);
@@ -17,7 +21,7 @@ public class WebServer {
         Spark.post("/process", ProcessAPI.processString);
     }
 
-    public static void enableCORS(final String origin, final String methods, final String headers) {
+    public static void enableCORS(final String methods, final String headers) {
         Spark.options("/*", (request, response) -> {
             String accessControlRequestHeaders = request.headers("Access-Control-Request-Headers");
             if (accessControlRequestHeaders != null) {
@@ -32,11 +36,20 @@ public class WebServer {
         });
 
         Spark.before((request, response) -> {
-            response.header("Access-Control-Allow-Origin", origin);
+            if (allowedOrigins.contains(request.headers("Origin"))) {
+                response.header("Access-Control-Allow-Origin", request.headers("Origin"));
+            }
+            else {
+                response.header("Access-Control-Allow-Origin", "null");
+            }
             response.header("Access-Control-Request-Method", methods);
             response.header("Access-Control-Allow-Headers", headers);
             response.type("application/json");
         });
+    }
+
+    public static void allowOrigin(String origin) {
+        allowedOrigins.add(origin);
     }
 
 }
