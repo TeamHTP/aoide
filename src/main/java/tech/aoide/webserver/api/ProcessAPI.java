@@ -12,6 +12,7 @@ public class ProcessAPI {
         // send data to parser
         req.params("data");
         // return data from audio engine
+        res.header("Content-Encoding", "gzip");
         res.type("application/json");
         ArrayList<AudioTrack> tracks = new ArrayList<>();
         return new Gson().toJson(tracks);
