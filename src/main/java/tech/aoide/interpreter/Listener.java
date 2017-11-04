@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class Listener implements Java8Listener {
 
-    private static ArrayList<AudioTrack> tracks;
+    private ArrayList<AudioTrack> tracks;
 
     Listener() {
         tracks = new ArrayList<>();
@@ -25,10 +25,6 @@ public class Listener implements Java8Listener {
 
     private void addNode(int track, AudioNode node) {
         tracks.get(track).addNode(node);
-    }
-
-    private AudioNode makeNode(String key) {
-        return new AudioNode(key, 5, 5, 50, 0);
     }
 
     @Override
@@ -353,7 +349,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterReturnStatement(Java8Parser.ReturnStatementContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("A4", "triangle", 3));
     }
 
     @Override
@@ -1393,7 +1390,8 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterExpressionStatement(Java8Parser.ExpressionStatementContext ctx) {
-
+        // TODO
+        addNode(0, new AudioNode("B4", "triangle", 3));
     }
 
     @Override
