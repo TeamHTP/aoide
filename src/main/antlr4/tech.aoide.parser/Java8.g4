@@ -36,7 +36,7 @@
  *       than the Java 7 grammar in the grammars-v4/java directory. This
  *     one is, however, extremely close to the spec.
  *
- * You can test with
+ * You can Test with
  *
  *  $ antlr4 Java8.g4
  *  $ javac *.java

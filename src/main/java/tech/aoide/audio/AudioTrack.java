@@ -14,4 +14,8 @@ public class AudioTrack {
         this.nodes.add(node);
     }
 
+    public ArrayList<AudioNode> getNodes() {
+        return nodes;
+    }
+
 }

@@ -10,7 +10,7 @@ public class WebServer {
     }
 
     public static void setupRoutes() {
-        Spark.get("/", (req, res) -> "Aoide API server");
+        Spark.get("/", (req, res) -> "Interpreter API server");
         Spark.post("/process", ProcessAPI.processString);
     }
 

@@ -55,4 +55,9 @@ public class AudioNode {
     public void setOffset(double offset) {
         this.offset = offset;
     }
+
+    @Override
+    public String toString() {
+        return "k:" + key + " d:" + duration + " s:" + speed + " v:" + volume + " o:" + offset;
+    }
 }
