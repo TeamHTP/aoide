@@ -17,8 +17,13 @@ public class ProcessAPI {
         // return data from audio engine
         res.header("Content-Encoding", "gzip");
         res.type("application/json");
-        Interpreter interpreter = new Interpreter(processRequest.getData());
-        ArrayList<AudioTrack> tracks = interpreter.interpret();
+        ArrayList<AudioTrack> tracks;
+        try {
+            Interpreter interpreter = new Interpreter(processRequest.getData(), processRequest.getLang());
+            tracks = interpreter.interpret();
+        } catch (IllegalArgumentException e) {
+            tracks = new ArrayList<>();
+        }
         return new Gson().toJson(tracks);
     };
 
