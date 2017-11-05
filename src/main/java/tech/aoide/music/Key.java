@@ -7,14 +7,14 @@ public enum Key {
     E_MAJOR(new String[] { "E", "F#", "G#", "A", "B", "C#", "D#"}),
     B_MAJOR(new String[] { "B", "C#", "D#", "E", "F#", "G#", "A#"}),
     FS_MAJOR(new String[] { "F#", "G#", "A#", "B", "C#", "D#", "F"}),
-    CS_MAJOR(new String[] { "C#", "D#", "F", "F#", "G#", "A#", "B#"}),
+    CS_MAJOR(new String[] { "C#", "D#", "F", "F#", "G#", "A#", "C"}),
     Cb_MAJOR(new String[] { "Cb", "Db", "Eb", "Fb", "Gb", "Ab", "Bb"}),
     Gb_MAJOR(new String[] { "Gb", "Ab", "Bb", "Cb", "Db", "Eb", "F"}),
     Db_MAJOR(new String[] { "Db", "Eb", "F", "Gb", "Ab", "Bb", "C"}),
     Ab_MAJOR(new String[] { "Ab", "Bb", "C", "Db", "Eb", "F", "G"}),
     Eb_MAJOR(new String[] { "Eb", "F", "G", "Ab", "Bb", "C", "D"}),
     Bb_MAJOR(new String[] { "Bb", "C", "D", "Eb", "F", "G", "A"}),
-    F_MAJOR(new String[] { "F", "G", "A", "B#", "C", "D", "E"}),
+    F_MAJOR(new String[] { "F", "G", "A", "Bb", "C", "D", "E"}),
     C_MAJOR(new String[] { "C", "D", "E", "F", "G", "A", "B"});
 
     private String[] notes;
