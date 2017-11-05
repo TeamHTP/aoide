@@ -68,7 +68,7 @@ public class Interpreter {
         for (int i=0;i<tree.getChildCount();i++) {
             String terminalVal = getTerminal(tree.getChild(i));
             if (terminalVal != null) {
-                temp.addNode(new AudioNode(key.getNote((traverseChord.ordinal() + count) % 7), "sine", 3));
+                temp.addNode(new AudioNode(key.getNote((traverseChord.ordinal() + count) % 7) + "4", "sine", 3));
                 count += 2;
             }
             else {
