@@ -63,10 +63,10 @@ public class Interpreter {
         for (int i=0;i<tree.getChildCount();i++) {
             String terminalVal = getTerminal(tree.getChild(i));
             if (terminalVal != null) {
-                if (terminalVal.equals("if")) {
+                if (terminalVal.equals("if") || terminalVal.equals("for") || terminalVal.equals("while")) {
                     wave = Wave.values()[(wave.ordinal() + 1) % Wave.values().length];
                 }
-                temp.addNode(new AudioNode(key.getNote((traverseChord.ordinal() + count) % 7) + "4", wave.name().toLowerCase(), 3));
+                temp.addNode(new AudioNode(key.getNote((traverseChord.ordinal() + count) % 7) + (4 + (traverseChord.ordinal() + count) / 7), wave.name().toLowerCase(), 3));
                 count += 2;
             }
             else {
