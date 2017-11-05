@@ -45,7 +45,7 @@ public class Interpreter {
                 traverse(child.getChild(0).getChild(0), Chord.I, Wave.SINE);
             }
         }
-        System.out.println(Arrays.toString(chords.toArray()));
+        System.gc();
     }
 
     private void countImports() {
