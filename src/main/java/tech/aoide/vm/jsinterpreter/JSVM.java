@@ -31,6 +31,8 @@ public class JSVM {
         try {
             Key key = Key.values()[source.length() % Key.values().length];
             engine.put("source", source);
+            engine.eval("console = {};");
+            engine.eval("console.log = function(a) {};");
             engine.eval(new FileReader("acorn_interpreter.js"));
             engine.eval("var interp = new Interpreter(source);");
             while (engine.eval("interp.step();").equals(true)) {
