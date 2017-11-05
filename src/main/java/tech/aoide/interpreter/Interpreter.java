@@ -66,7 +66,7 @@ public class Interpreter {
                 if (terminalVal.equals("if") || terminalVal.equals("for") || terminalVal.equals("while")) {
                     wave = Wave.values()[(wave.ordinal() + 1) % Wave.values().length];
                 }
-                temp.addNode(new AudioNode(key.getNote((traverseChord.ordinal() + count) % 7) + (4 + (traverseChord.ordinal() + count) / 7), wave.name().toLowerCase(), 3));
+                temp.addNode(new AudioNode(key.getNote((traverseChord.ordinal() + count) % 7) + (4 + (traverseChord.ordinal() + count) / 7), wave.name().toLowerCase(), terminalVal.length()));
                 count += 2;
             }
             else {
