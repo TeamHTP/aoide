@@ -80,7 +80,7 @@ public class JSVM {
                     }
                     track.addNode(new AudioNode(key.getNote((chord.ordinal() + offset) % 7) + (Math.max(2, code.getBytes()[0] % 6) + (chord.ordinal() + offset) / 7), wave.name().toLowerCase(), 3));
                 }
-                chord = Chord.getProgressions(chord)[code.getBytes()[0] % Chord.getProgressions(chord).length];
+                chord = Chord.getProgressions(chord)[code.length() % Chord.getProgressions(chord).length];
                 chords.add(track);
             }
             return chords;
