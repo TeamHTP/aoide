@@ -6,6 +6,7 @@ import tech.aoide.audio.AudioNode;
 import tech.aoide.audio.AudioTrack;
 import tech.aoide.music.Chord;
 import tech.aoide.music.Key;
+import tech.aoide.music.Wave;
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
@@ -42,7 +43,7 @@ public class JSVM {
                 AudioTrack track = new AudioTrack();
                 track.setCodeStart(ints[0].intValue());
                 track.setCodeEnd(ints[1].intValue());
-                for (int i = 0; i < Math.min(4, code.length()); i++) {
+                for (int i = 0; i < Math.min(6, code.length()); i++) {
                     int offset = 0;
                     switch (i) {
                         case 0:
@@ -57,10 +58,26 @@ public class JSVM {
                         case 3:
                             offset = 7;
                             break;
+                        case 4:
+                            offset = 9;
+                            break;
+                        case 5:
+                            offset = 11;
+                            break;
                     }
-                    track.addNode(new AudioNode(key.getNote((chord.ordinal() + offset) % 7) + (4 + (chord.ordinal() + offset) / 7), "sine", 3));
+                    Wave wave = Wave.SINE;
+                    if (code.contains("(") || code.contains(")")) {
+                        wave = Wave.SINE;
+                    }
+                    else if (code.contains("[") || code.contains("]")) {
+                        wave = Wave.SQUARE;
+                    }
+                    else if (code.contains(".")) {
+                        wave = Wave.TRIANGLE;
+                    }
+                    track.addNode(new AudioNode(key.getNote((chord.ordinal() + offset) % 7) + (Math.max(2, code.getBytes()[0] % 6) + (chord.ordinal() + offset) / 7), wave.name().toLowerCase(), 3));
                 }
-                chord = Chord.getProgressions(chord)[ints[1].intValue() % Chord.getProgressions(chord).length];
+                chord = Chord.getProgressions(chord)[code.getBytes()[0] % Chord.getProgressions(chord).length];
                 chords.add(track);
             }
             return chords;
