@@ -31,21 +31,23 @@ public class JSVM {
         try {
             Key key = Key.values()[source.length() % Key.values().length];
             engine.put("source", source);
-            engine.eval("console = {};");
+            engine.eval("var console = {};");
             engine.eval("console.log = function(a) {};");
             engine.eval(new FileReader("acorn_interpreter.js"));
             engine.eval("var interp = new Interpreter(source);");
+
             while (engine.eval("interp.step();").equals(true)) {
                 JSObject stateStack = (JSObject) ((JSObject)engine.get("interp")).getMember("stateStack");
                 Number[] ints = new Number[2];
                 ints[0] = (Number) ((ScriptObjectMirror) ((JSObject)stateStack.values().toArray()[stateStack.values().toArray().length - 1]).getMember("node")).getMember("start");
                 ints[1] = (Number) ((ScriptObjectMirror) ((JSObject)stateStack.values().toArray()[stateStack.values().toArray().length - 1]).getMember("node")).getMember("end");
-                //System.out.println();
+
                 String code = source.substring(ints[0].intValue(), ints[1].intValue());
                 AudioTrack track = new AudioTrack();
                 track.setCodeStart(ints[0].intValue());
                 track.setCodeEnd(ints[1].intValue());
                 int duration = Math.max(2, Math.min(6, code.split("\n").length));
+
                 for (int i = 0; i < Math.min(6, code.length()); i++) {
                     int offset = 0;
                     switch (i) {
@@ -83,6 +85,7 @@ public class JSVM {
                     }
                     track.addNode(new AudioNode(key.getNote((chord.ordinal() + offset) % 7) + (Math.max(2, code.getBytes()[0] % 6) + (chord.ordinal() + offset) / 7), wave.name().toLowerCase(), duration));
                 }
+
                 chord = Chord.getProgressions(chord)[code.length() % Chord.getProgressions(chord).length];
                 chords.add(track);
             }
