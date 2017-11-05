@@ -43,6 +43,7 @@ public class JSVM {
                 AudioTrack track = new AudioTrack();
                 track.setCodeStart(ints[0].intValue());
                 track.setCodeEnd(ints[1].intValue());
+                int duration = Math.min(12, code.split("\n").length * 2);
                 for (int i = 0; i < Math.min(6, code.length()); i++) {
                     int offset = 0;
                     switch (i) {
@@ -78,7 +79,7 @@ public class JSVM {
                     else if (code.contains(".")) {
                         wave = Wave.TRIANGLE;
                     }
-                    track.addNode(new AudioNode(key.getNote((chord.ordinal() + offset) % 7) + (Math.max(2, code.getBytes()[0] % 6) + (chord.ordinal() + offset) / 7), wave.name().toLowerCase(), 3));
+                    track.addNode(new AudioNode(key.getNote((chord.ordinal() + offset) % 7) + (Math.max(2, code.getBytes()[0] % 6) + (chord.ordinal() + offset) / 7), wave.name().toLowerCase(), duration));
                 }
                 chord = Chord.getProgressions(chord)[code.length() % Chord.getProgressions(chord).length];
                 chords.add(track);
