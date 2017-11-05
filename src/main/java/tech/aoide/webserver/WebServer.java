@@ -36,7 +36,8 @@ public class WebServer {
         });
 
         Spark.before((request, response) -> {
-            if (allowedHosts.contains(request.host())) {
+            String origin = request.headers("Origin");
+            if (allowedHosts.contains(origin.substring(origin.indexOf("//") + 2))) {
                 response.header("Access-Control-Allow-Origin", request.headers("Origin"));
             }
             else {
