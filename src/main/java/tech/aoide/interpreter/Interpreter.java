@@ -40,6 +40,7 @@ public class Interpreter {
         tree = parser.compilationUnit();
         countImports();
         key = getKey();
+        System.gc();
         for (ParseTree child : tree.children) {
             if (child.getPayload() instanceof Java8Parser.TypeDeclarationContext) {
                 traverse(child.getChild(0).getChild(0), Chord.I, Wave.SINE);

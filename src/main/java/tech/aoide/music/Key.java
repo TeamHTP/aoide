@@ -6,7 +6,7 @@ public enum Key {
     A_MAJOR(new String[] { "A", "B", "C#", "D", "E", "F#", "G#"}),
     E_MAJOR(new String[] { "E", "F#", "G#", "A", "B", "C#", "D#"}),
     B_MAJOR(new String[] { "B", "C#", "D#", "E", "F#", "G#", "A#"}),
-    FS_MAJOR(new String[] { "F#", "G#", "A#", "B", "C#", "D#", "E#"}),
+    FS_MAJOR(new String[] { "F#", "G#", "A#", "B", "C#", "D#", "F"}),
     CS_MAJOR(new String[] { "C#", "D#", "E#", "F#", "G#", "A#", "B#"}),
     Cb_MAJOR(new String[] { "Cb", "Db", "Eb", "Fb", "Gb", "Ab", "Bb"}),
     Gb_MAJOR(new String[] { "Gb", "Ab", "Bb", "Cb", "Db", "Eb", "F"}),
