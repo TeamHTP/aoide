@@ -18,7 +18,7 @@ public class WebServer {
             res.header("Content-Type", "text/html; charset=utf-8");
             return "\uD83C\uDF11 Aoide API server";
         });
-        Spark.post("/process", ProcessAPI.processString);
+        Spark.post("/process", ProcessAPI.processJava);
     }
 
     public static void enableCORS(final String methods, final String headers) {
