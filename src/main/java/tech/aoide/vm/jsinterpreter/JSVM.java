@@ -43,7 +43,7 @@ public class JSVM {
                 AudioTrack track = new AudioTrack();
                 track.setCodeStart(ints[0].intValue());
                 track.setCodeEnd(ints[1].intValue());
-                int duration = Math.min(12, code.split("\n").length * 2);
+                int duration = Math.max(2, Math.min(6, code.split("\n").length));
                 for (int i = 0; i < Math.min(6, code.length()); i++) {
                     int offset = 0;
                     switch (i) {
