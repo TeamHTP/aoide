@@ -2,22 +2,19 @@ package tech.aoide.interpreter;
 
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
-import org.antlr.v4.runtime.RuleContext;
 import org.antlr.v4.runtime.tree.ParseTree;
-import org.antlr.v4.runtime.tree.ParseTreeWalker;
 import tech.aoide.audio.AudioNode;
 import tech.aoide.audio.AudioTrack;
 import tech.aoide.music.Chord;
 import tech.aoide.music.Key;
+import tech.aoide.music.Wave;
 import tech.aoide.parser.Java8Lexer;
 import tech.aoide.parser.Java8Parser;
 
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -33,7 +30,6 @@ public class Interpreter {
     private int imports;
     private Listener listener;
     private ArrayList<AudioTrack> chords = new ArrayList<>();
-    private Chord currentChord;
     private Key key;
 
     public Interpreter(String code) {
@@ -44,7 +40,6 @@ public class Interpreter {
         tree = parser.compilationUnit();
         countImports();
         key = getKey();
-        currentChord = Chord.I;
         for (ParseTree child : tree.children) {
             if (child.getPayload() instanceof Java8Parser.TypeDeclarationContext) {
                 traverse(child.getChild(0).getChild(0), Chord.I);
@@ -62,20 +57,23 @@ public class Interpreter {
         }
     }
 
-    private void traverse(ParseTree tree, Chord traverseChord) {
+    private void traverse(ParseTree tree, Chord traverseChord, Wave wave) {
         AudioTrack temp = new AudioTrack();
         int count = 0;
         for (int i=0;i<tree.getChildCount();i++) {
             String terminalVal = getTerminal(tree.getChild(i));
             if (terminalVal != null) {
-                temp.addNode(new AudioNode(key.getNote((traverseChord.ordinal() + count) % 7) + "4", "sine", 3));
+                if (terminalVal.equals("if")) {
+                    wave = Wave.values()[(wave.ordinal() + 1) % Wave.values().length];
+                }
+                temp.addNode(new AudioNode(key.getNote((traverseChord.ordinal() + count) % 7) + "4", wave.name().toLowerCase(), 3));
                 count += 2;
             }
             else {
                 if (temp.getNodes().size() != 0) {
                     traverseChord = Chord.getProgressions(traverseChord)[temp.getNodes().get(0).getKey().getBytes()[0] % Chord.getProgressions(traverseChord).length];
                 }
-                traverse(tree.getChild(i), traverseChord);
+                traverse(tree.getChild(i), traverseChord, wave);
             }
         }
         if (temp.getNodes().size() != 0) {
@@ -104,8 +102,6 @@ public class Interpreter {
 
     public ArrayList<AudioTrack> interpret() {
         return chords;
-        //ParseTreeWalker.DEFAULT.walk(listener, tree);
-        //return listener.getTracks();
     }
 
     public static void main(String[] args) throws IOException {
