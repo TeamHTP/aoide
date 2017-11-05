@@ -11,6 +11,8 @@ public class Aoide {
         WebServer.allowOrigin("https://aoide-frontend.herokuapp.com");
         WebServer.allowOrigin("https://aoide-frontend-dev.herokuapp.com");
         WebServer.allowOrigin("https://aoide.tech");
+        WebServer.allowOrigin("https://codeaoide.com");
+        WebServer.allowOrigin("http://10.131.182.35");
         WebServer.enableCORS("POST, GET, OPTIONS", "*");
         WebServer.setupRoutes();
     }
