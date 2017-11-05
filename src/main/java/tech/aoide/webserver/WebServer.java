@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class WebServer {
 
-    private static ArrayList<String> allowedOrigins = new ArrayList<>();
+    private static ArrayList<String> allowedHosts = new ArrayList<>();
 
     public static void port(int port) {
         Spark.port(port);
@@ -36,7 +36,7 @@ public class WebServer {
         });
 
         Spark.before((request, response) -> {
-            if (allowedOrigins.contains(request.headers("Origin"))) {
+            if (allowedHosts.contains(request.host())) {
                 response.header("Access-Control-Allow-Origin", request.headers("Origin"));
             }
             else {
@@ -48,8 +48,8 @@ public class WebServer {
         });
     }
 
-    public static void allowOrigin(String origin) {
-        allowedOrigins.add(origin);
+    public static void allowHost(String origin) {
+        allowedHosts.add(origin);
     }
 
 }
