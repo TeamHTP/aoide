@@ -5,6 +5,7 @@ import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 import tech.aoide.audio.AudioNode;
 import tech.aoide.audio.AudioTrack;
+import tech.aoide.music.Key;
 import tech.aoide.parser.Java8Listener;
 import tech.aoide.parser.Java8Parser;
 
@@ -12,9 +13,11 @@ import java.util.ArrayList;
 
 public class Listener implements Java8Listener {
 
+    private Key key;
     private ArrayList<AudioTrack> tracks;
 
-    Listener() {
+    Listener(Key key) {
+        this.key = key;
         tracks = new ArrayList<>();
         tracks.add(new AudioTrack());
     }
@@ -31,6 +34,7 @@ public class Listener implements Java8Listener {
     public void enterClassMemberDeclaration(Java8Parser.ClassMemberDeclarationContext ctx) {
         // TODO
         addNode(0, new AudioNode("C2", "sine", 3));
+
     }
 
     @Override
@@ -848,8 +852,7 @@ public class Listener implements Java8Listener {
 
     @Override
     public void enterNormalClassDeclaration(Java8Parser.NormalClassDeclarationContext ctx) {
-        // TODO
-        addNode(0, new AudioNode("A4", "triangle", 3));
+        ArrayList<AudioTrack> tracks = new ArrayList<>();
     }
 
     @Override

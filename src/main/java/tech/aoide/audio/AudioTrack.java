@@ -1,6 +1,7 @@
 package tech.aoide.audio;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class AudioTrack {
 
@@ -16,6 +17,11 @@ public class AudioTrack {
 
     public ArrayList<AudioNode> getNodes() {
         return nodes;
+    }
+
+    @Override
+    public String toString() {
+        return Arrays.toString(nodes.toArray());
     }
 
 }

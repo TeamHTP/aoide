@@ -33,6 +33,6 @@ public class AudioNode {
 
     @Override
     public String toString() {
-        return "k:" + this.key + "w:" + this.wave + " d:" + this.duration + " s:";
+        return "k:" + this.key + " w:" + this.wave + " d:" + this.duration + " s:";
     }
 }
