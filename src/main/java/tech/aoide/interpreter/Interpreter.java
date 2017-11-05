@@ -31,21 +31,17 @@ public class Interpreter {
                 lexer = new Java8Lexer(new ANTLRInputStream(code));
                 tokens = new CommonTokenStream(lexer);
                 parser = new Java8Parser(tokens);
+                tree = ((Java8Parser)parser).compilationUnit();
                 break;
             case "Python3":
                 lexer = new Python3Lexer(new ANTLRInputStream(code));
                 tokens = new CommonTokenStream(lexer);
                 parser = new Python3Parser(tokens);
-                break;
-            case "C":
-                lexer = new CLexer(new ANTLRInputStream(code));
-                tokens = new CommonTokenStream(lexer);
-                parser = new CParser(tokens);
+                tree = ((Python3Parser)parser).file_input();
                 break;
             default:
                 throw new IllegalArgumentException("Language not supported");
         }
-        tree = parser.getRuleContext();
         key = getKey();
     }
 
