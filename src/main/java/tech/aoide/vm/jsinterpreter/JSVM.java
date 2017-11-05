@@ -69,6 +69,9 @@ public class JSVM {
                     if (code.contains("(") || code.contains(")")) {
                         wave = Wave.SINE;
                     }
+                    else if (code.contains(">") || code.contains("<")) {
+                        wave = Wave.SAWTOOTH;
+                    }
                     else if (code.contains("[") || code.contains("]")) {
                         wave = Wave.SQUARE;
                     }
