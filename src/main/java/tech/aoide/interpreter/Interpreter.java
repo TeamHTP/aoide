@@ -2,60 +2,51 @@ package tech.aoide.interpreter;
 
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.Lexer;
+import org.antlr.v4.runtime.Parser;
 import org.antlr.v4.runtime.tree.ParseTree;
 import tech.aoide.audio.AudioNode;
 import tech.aoide.audio.AudioTrack;
 import tech.aoide.music.Chord;
 import tech.aoide.music.Key;
 import tech.aoide.music.Wave;
-import tech.aoide.parser.Java8Lexer;
-import tech.aoide.parser.Java8Parser;
+import tech.aoide.parser.*;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Interpreter {
 
-    private static final char[] EXCLUDE = new char[] { ';', '{', '}', '(', ')', '[', ']' };
-
     private String code;
-    private Java8Lexer lexer;
-    private CommonTokenStream tokens;
-    private Java8Parser parser;
-    private Java8Parser.CompilationUnitContext tree;
-    private int imports;
-    private Listener listener;
+    private ParseTree tree;
     private ArrayList<AudioTrack> chords = new ArrayList<>();
     private Key key;
 
-    public Interpreter(String code) {
+    public Interpreter(String code, String language) {
         this.code = code;
-        lexer = new Java8Lexer(new ANTLRInputStream(code));
-        tokens = new CommonTokenStream(lexer);
-        parser = new Java8Parser(tokens);
-        tree = parser.compilationUnit();
-        countImports();
+        Lexer lexer;
+        CommonTokenStream tokens;
+        Parser parser;
+        switch (language) {
+            case "Java8":
+                lexer = new Java8Lexer(new ANTLRInputStream(code));
+                tokens = new CommonTokenStream(lexer);
+                parser = new Java8Parser(tokens);
+                break;
+            case "Python3":
+                lexer = new Python3Lexer(new ANTLRInputStream(code));
+                tokens = new CommonTokenStream(lexer);
+                parser = new Python3Parser(tokens);
+                break;
+            case "C":
+                lexer = new CLexer(new ANTLRInputStream(code));
+                tokens = new CommonTokenStream(lexer);
+                parser = new CParser(tokens);
+                break;
+            default:
+                throw new IllegalArgumentException("Language not supported");
+        }
+        tree = parser.getContext();
         key = getKey();
-        System.gc();
-        for (ParseTree child : tree.children) {
-            if (child.getPayload() instanceof Java8Parser.TypeDeclarationContext) {
-                traverse(child.getChild(0).getChild(0), Chord.I, Wave.SINE);
-            }
-        }
-        System.gc();
-    }
-
-    private void countImports() {
-        imports = 0;
-        for (ParseTree child : tree.children) {
-            if (child instanceof Java8Parser.ImportDeclarationContext) {
-                imports++;
-            }
-        }
     }
 
     private void traverse(ParseTree tree, Chord traverseChord, Wave wave) {
@@ -64,9 +55,9 @@ public class Interpreter {
         for (int i=0;i<tree.getChildCount();i++) {
             String terminalVal = getTerminal(tree.getChild(i));
             if (terminalVal != null) {
-                if (terminalVal.equals("if") || terminalVal.equals("for") || terminalVal.equals("while")) {
-                    wave = Wave.values()[(wave.ordinal() + 1) % Wave.values().length];
-                }
+//                if (terminalVal.equals("if") || terminalVal.equals("for") || terminalVal.equals("while")) {
+//                    wave = Wave.values()[(wave.ordinal() + 1) % Wave.values().length];
+//                }
                 temp.addNode(new AudioNode(key.getNote((traverseChord.ordinal() + count) % 7) + (4 + (traverseChord.ordinal() + count) / 7), wave.name().toLowerCase(), Math.max(3, Math.min(terminalVal.length(), 12) / 2)));
                 count += 2;
             }
@@ -89,28 +80,22 @@ public class Interpreter {
         if (tree.getChildCount() == 1) {
             return getTerminal(tree.getChild(0));
         }
-        for (char c : EXCLUDE) {
-            if (tree.getText().charAt(0) == c) {
-                return null;
-            }
-        }
         return tree.getText();
     }
 
     private Key getKey() {
-        return Key.values()[imports % Key.values().length];
+        return Key.values()[code.length() % Key.values().length];
     }
 
     public ArrayList<AudioTrack> interpret() {
+        System.gc();
+        for (int i = 0; i < tree.getChildCount(); i++) {
+            if (tree.getChild(i).getPayload() instanceof Java8Parser.TypeDeclarationContext) {
+                traverse(tree.getChild(i), Chord.I, Wave.SINE);
+            }
+        }
+        System.gc();
         return chords;
-    }
-
-    public static void main(String[] args) throws IOException {
-        File file = new File("C:\\Users\\domin\\Documents\\code\\antlr\\java8\\examples\\HelloWorld.java");
-        byte[] encoded = Files.readAllBytes(file.toPath());
-        String code = new String(encoded, Charset.forName("utf-8"));
-        Interpreter interpreter = new Interpreter(code);
-        System.out.println(interpreter.imports);
     }
 
 }

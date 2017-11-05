@@ -28,4 +28,8 @@ public enum Chord {
         return progressions.get(chord);
     }
 
+    public Chord[] getProgressions() {
+        return progressions.get(this);
+    }
+
 }
