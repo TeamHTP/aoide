@@ -45,7 +45,7 @@ public class Interpreter {
             default:
                 throw new IllegalArgumentException("Language not supported");
         }
-        tree = parser.getContext();
+        tree = parser.getRuleContext();
         key = getKey();
     }
 
