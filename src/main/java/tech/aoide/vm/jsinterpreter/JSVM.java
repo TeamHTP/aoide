@@ -42,7 +42,6 @@ public class JSVM {
                 Number start = (Number) node.getMember("start");
                 Number end = (Number) node.getMember("end");
                 if (start.intValue() < 37 || end.intValue() < 37) {
-                    if (start.intValue() == 32 && end.intValue())
                     continue;
                 }
 
