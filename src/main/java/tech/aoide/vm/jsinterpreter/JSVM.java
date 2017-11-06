@@ -30,20 +30,26 @@ public class JSVM {
         Chord chord = Chord.I;
         try {
             Key key = Key.values()[source.length() % Key.values().length];
-            engine.put("source", source);
+            String sourcePrefix = "var console = { log: function() { return; } };";
+            engine.put("source", sourcePrefix + source);
             engine.eval(new FileReader("acorn_interpreter.js"));
             engine.eval("var interp = new Interpreter(source);");
 
             while (engine.eval("interp.step();").equals(true)) {
                 JSObject stateStack = (JSObject) ((JSObject)engine.get("interp")).getMember("stateStack");
-                Number[] ints = new Number[2];
-                ints[0] = (Number) ((ScriptObjectMirror) ((JSObject)stateStack.values().toArray()[stateStack.values().toArray().length - 1]).getMember("node")).getMember("start");
-                ints[1] = (Number) ((ScriptObjectMirror) ((JSObject)stateStack.values().toArray()[stateStack.values().toArray().length - 1]).getMember("node")).getMember("end");
+                Object[] stateStackValues = stateStack.values().toArray();
+                JSObject node = ((ScriptObjectMirror) ((JSObject) stateStackValues[stateStackValues.length - 1]).getMember("node"));
+                Number start = (Number) node.getMember("start");
+                Number end = (Number) node.getMember("end");
+                if (start.intValue() < 37 || end.intValue() < 37) {
+                    if (start.intValue() == 32 && end.intValue())
+                    continue;
+                }
 
-                String code = source.substring(ints[0].intValue(), ints[1].intValue());
+                String code = source.substring(start.intValue() - sourcePrefix.length(), end.intValue() - sourcePrefix.length());
                 AudioTrack track = new AudioTrack();
-                track.setCodeStart(ints[0].intValue());
-                track.setCodeEnd(ints[1].intValue());
+                track.setCodeStart(start.intValue() - sourcePrefix.length());
+                track.setCodeEnd(end.intValue() - sourcePrefix.length());
                 int duration = Math.max(2, Math.min(6, code.split("\n").length));
 
                 for (int i = 0; i < Math.min(6, code.length()); i++) {
