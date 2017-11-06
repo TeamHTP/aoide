@@ -12,6 +12,7 @@ public class Aoide {
         WebServer.allowHost("aoide-frontend-dev.herokuapp.com");
         WebServer.allowHost("aoide.tech");
         WebServer.allowHost("codeaoide.com");
+        WebServer.allowHost("aoide.io");
         WebServer.enableCORS("POST, GET, OPTIONS", "*");
         WebServer.setupRoutes();
     }
